@@ -1,6 +1,7 @@
 const src=function(filePath){return "../src/"+filePath};
 const errors=function(filePath){return "../src/errors/"+filePath};
 
+const chaiAssert=require('chai').assert;
 const Parser=require(src('index.js')).Parser;
 const MissingValueError=require(errors('missingValueError.js'));
 const MissingEndQuoteError=require(errors('missingEndQuoteError.js'));
@@ -9,9 +10,6 @@ const MissingAssignmentOperatorError=require(errors('missingAssignmentOperatorEr
 const IncompleteKeyValuePairError=require(errors('incompleteKeyValuePairError.js'));
 
 var kvParser;
-
-const chaiAssert=require('chai').assert;
-
 
 describe("parse basic key values",function(){
   beforeEach(function(){
